@@ -18,7 +18,6 @@ Dual-Head Architecture: Separate prediction heads for Allele 1 and Allele 2 to c
 
 Resilient to Noise: Uses Test-Time Augmentation (TTA) and ensemble averaging for highly robust clinical predictions.
 
-Lightweight Inference: A standalone inference script (infer.py) designed for rapid execution in clinical laboratory environments without requiring heavy dependencies.
 
 
 **Repository Structure**
