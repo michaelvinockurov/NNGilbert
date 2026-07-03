@@ -11,8 +11,7 @@ Genotyping the highly AT-rich UGT1A1 rs3064744 promoter region is critical for p
 Instead of relying on error-prone manual interpretation of melting peaks, this project introduces an ensemble of one-dimensional convolutional neural networks (1D-CNN).
 The core innovation is the Dual Control Sample Comparison mechanism: the network processes an 11-channel tensor that includes the raw signal, its derivatives, and the thermodynamic differences between the patient's sample and known reference anchors (7TA/7TA and 7TA/8TA). This forces the AI to focus on genuine biological features rather than instrument-specific thermal noise.
 
-Key Features:
-
+**Key Features:**
 End-to-end Pipeline: From raw MCA fluorescence data to a predicted genotype with a confidence score.
 
 Dual-Head Architecture: Separate prediction heads for Allele 1 and Allele 2 to capture all 10 possible genotype combinations in a single tube.
@@ -60,11 +59,14 @@ To classify new patient samples using a trained ensemble, use the lightweight in
 python infer.py --data new_patients.tsv --model models/ --output results.tsv
 
 
-Output Example:
+**Output Example:**
 
 Row   1: 6_7    (conf: 0.99, 0.98)
+
 Row   2: 7_7    (conf: 1.00, 1.00)
+
 Row   3: 7_8    (conf: 0.94, 0.96) ⚠️
+
 Row   4: 6_6    (conf: 0.99, 0.99)
 
 
