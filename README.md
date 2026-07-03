@@ -1,10 +1,10 @@
-UGT1A1 Genotyping using 1D-CNN Ensemble
+**UGT1A1 Genotyping using 1D-CNN Ensemble**
 
-Official PyTorch implementation for the automated classification of UGT1A1 rs3064744 polymorphism using asymmetric PCR melting curve analysis (aPCR-MCA).
+_Official PyTorch implementation for the automated classification of UGT1A1 rs3064744 polymorphism using asymmetric PCR melting curve analysis (aPCR-MCA)._
 
 This repository contains the deep learning pipeline used to achieve 100% cross-platform accuracy in discriminating highly homologous alleles (including the challenging 7TA and 8TA variants) directly from raw fluorescence melting curves.
 
-Overview
+**Overview**
 
 Genotyping the highly AT-rich UGT1A1 rs3064744 promoter region is critical for preemptive pharmacogenetic testing (e.g., preventing irinotecan toxicity) and diagnosing Gilbert’s syndrome.
 
@@ -21,26 +21,14 @@ Resilient to Noise: Uses Test-Time Augmentation (TTA) and ensemble averaging for
 
 Lightweight Inference: A standalone inference script (infer.py) designed for rapid execution in clinical laboratory environments without requiring heavy dependencies.
 
-⚙️ Installation
 
-Clone the repository:
-
-git clone [https://github.com/your-username/ugt1a1-cnn-genotyping.git](https://github.com/your-username/ugt1a1-cnn-genotyping.git)
-cd ugt1a1-cnn-genotyping
-
-
-Install the required dependencies:
-
-pip install torch numpy pandas scikit-learn
-
-
-📂 Repository Structure
+**Repository Structure**
 
 model.py — The primary script containing the full 1D-CNN architecture, data loaders, training pipeline (with mixup augmentation, early stopping, and OneCycleLR scheduler), and evaluation metrics.
 
 infer.py — A stripped-down, highly optimized script strictly for running inference on new data using pre-trained models.
 
-🚀 How to Use
+**How to Use**
 
 1. Data Format
 
@@ -82,16 +70,3 @@ Row   4: 6_6    (conf: 0.99, 0.99)
 
 The script automatically flags predictions with lower confidence thresholds for manual review.
 
-📝 Citation
-
-If you use this code or method in your research, please cite our paper:
-
-@article{vinokurov2026ugt1a1,
-  title={Development of a PCR-based technique for genotyping UGT1A1 gene SNP and distribution of rs3064744 alleles in the Russian population},
-  author={Vinokurov, M. A. and others},
-  journal={Frontiers in Genetics},
-  year={2026}
-}
-
-
-(Citation will be updated with DOI upon publication)
