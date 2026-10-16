@@ -32,7 +32,7 @@ infer.py — A stripped-down, highly optimized script strictly for running infer
 
 The scripts expect a Tab-Separated Values (.tsv) file. Each row represents a single PCR reaction well.
 
-Columns 1–45: Raw fluorescence measurements across the temperature gradient.
+Columns [1:x]: Raw fluorescence measurements across the temperature gradient ('x' is specified by the command --seq-len x).
 
 Control Flag Column: An integer indicating the sample type:
 
@@ -48,7 +48,7 @@ Control Flag Column: An integer indicating the sample type:
 
 To train a new ensemble of 5 models from scratch using your dataset:
 
-python model.py train --data dataset.tsv --output models/ --ensemble 5 --epochs 200
+python main.py train --data dataset.tsv --output models/ --ensemble 5 --epochs 200 --seq-len 46
 
 
 3. Running Inference
